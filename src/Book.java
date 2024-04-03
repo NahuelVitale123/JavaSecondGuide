@@ -1,14 +1,17 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 public class Book {
     private String title;
     private Integer price;
     private Integer stock;
-    private Autor autor;
+    private List<Autor> authors;
 
-    public Book(String title, Integer price, Integer stock, Autor autor) {
+    public Book(String title, Integer price, Integer stock, List<Autor> authors) {
         this.title = title;
         this.price = price;
         this.stock = stock;
-        this.autor = autor;
+        this.authors = authors;
     }
 
     public String getTitle() {
@@ -23,8 +26,8 @@ public class Book {
         return stock;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public List<Autor> getAuthors() {
+        return authors;
     }
 
     public void setTitle(String title) {
@@ -39,12 +42,18 @@ public class Book {
         this.stock = stock;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setAuthors(List<Autor> authors) {
+        this.authors = authors;
     }
 
-    public void printText()
+    public String printText()
     {
-        System.out.println("El libro " + getTitle() + " de " + getAutor().getNombre() + " se vende a " + getPrice() + " pesos");
+        String chain = "Title: " + title + "\nAuthor: ";
+        for (int i = 0;i<authors.size();i++){
+            chain += authors.get(i).showAuthor() + "\n       ------------------------";
+        }
+       chain += "\nPrice: $" + price + "\nStock: " + stock;
+
+        return chain;
     }
 }

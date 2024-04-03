@@ -43,8 +43,8 @@ public class Autor {
         this.email = email;
     }
 
-    public void showAuthor(){
-        System.out.println("Name: " + nombre + "\nLastName: " + apellido + "\nGender: " + genero + "\nEmail: " + email);
-
+    public String showAuthor(){
+        String chain ="\n       Name: " + nombre + "\n       LastName: " + apellido + "\n       Gender: " + genero + "\n       Email: " + email;
+        return chain;
     }
 }
