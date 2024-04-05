@@ -28,3 +28,11 @@ public class Main {
         System.out.println(show);
     }
 }
+
+/*Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Dog dog = (Dog) o;
+    return Objects.equals(name, dog.name) && Objects.equals(species, dog.species);
+} */
